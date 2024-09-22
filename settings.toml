@@ -1,0 +1,17 @@
+#To use u-center, see README.md
+
+run_pygnssutils_in_foreground = false
+foreground_process = "cgps"
+
+gpsd_enable_bridge = true
+gpsd_command = "gpsd -G -D 5 -F -n -N /dev/ttyVIRT1" 
+gpsd_virtual_port_in = "/dev/ttyVIRT0" #Should align with the socat_command link in file.
+gpsd_socat_command = "socat PTY,link=/dev/ttyVIRT0,raw,echo=0 PTY,link=/dev/ttyVIRT1,raw,echo=0"
+
+logging_type = { raw_location = false, kml = true }
+
+#PointPerfect NTRIP corrections; other services can be configured through gnss_core.py
+stream_ntrip = false
+
+#By default, GPS device is /dev/ttyACM0
+gps_device = "/dev/ttyACM0"
