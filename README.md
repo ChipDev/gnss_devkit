@@ -75,6 +75,8 @@ information and scripts.
 The only required components are: The GPS device connected to the GW16143 and PyGNSSUtils. 
 All other parts, such as PointPerfect can be enabled/disabled in settings.toml.
 PointPerfect credentials are configured in .settings.toml (note the .)
+Included in your DevKit is a celluar SIM card from Hologram. See the wiki for setup.
+Once configured, the internet can be accessed normally and all scripts should function.
 
 ----------------------------------------------------------------------------------------------------
 
