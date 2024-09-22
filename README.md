@@ -85,6 +85,10 @@ Once configured, the internet can be accessed normally and all scripts should fu
 USAGE: Download dependencies by running ./setup.sh, configure settings.toml
 and .secrets.toml then run ./start_gps.py
 
+NOTE: setup.sh MASKS gpsd with the command "systemctl mask gpsd".                                    !!!
+This is because the scripts provided use custom instances of gpsd + cgps, and pygnssutils uses /dev/ttyACM0.
+To reduce conflict the system daemon is disabled. You should re-enable it for your own programs.
+
 A common evaluation usecase is:
 Running "cgps" in the foreground to monitor GPS data, along with PointPerfect
 GNSS corrections.
