@@ -50,4 +50,7 @@ echo "apt-get requirements satisfied"
 pip3 install -r requirements.txt --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org
 check_success "Python requirements installation"
 
+echo "MASKING GPSD FOR DEVELOPMENT WITH COMMAND."
+sudo systemctl mask gpsd
+
 echo "Requirements satisfied. You should be good to go!"
