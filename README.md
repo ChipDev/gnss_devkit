@@ -12,10 +12,19 @@ The Venice GW7200 is a state-of-the-art industrial SBC
 from the Venice line. This development kit includes:
 
     HARDWARE:
-    1.   GW7200  Industrial SBC
-    2.  GW16143  High Precision GNSS/GPS
-    3.  GW16132  CAT M1 Cellular & BLE Radio
-    4.  
+    1.   GW7200  Industrial SBC + SoC
+    2.  GW16143  High Precision GNSS/GPS card
+    3.  GW16132  CAT M1 Cellular & BLE Radio card
+    4.  GW16100  u-blox L1/L2 Band, Precision GNSS Antenna
+    5.  GW10030  AC/DC 24V 1A Power Supply
+    6.  GW16099  JTAG USB Programmer/Serial
+    7.  GW10018  2x CAT5 Ethernet
+    8.  GW10045  USB Type A Male->Female
+    9.  GW10074  MMCX to SMA Female Cable
+    10. GW10043  BLE Antenna + GW10035 Antenna Cable
+    11. GW16065  Celluar Antenna + GW10036 Antenna Cable
+    12. GW17045  Hologram SIM for celluar.
+
              
     SOFTWARE:
     1. We set you up with Ubuntu. For specifics, use $ uname -a 
