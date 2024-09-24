@@ -9,6 +9,7 @@
 ```                                                                             
                Welcome to the Gateworks GNSS Development Kit!
 
+Gateworks Wiki: https://trac.gateworks.com
 
 The Venice GW7200 is a state-of-the-art industrial SBC
 from the Venice line. This development kit includes:
@@ -106,6 +107,9 @@ just use a one line command to send all /dev/ttyACM0 data over TCP.
 $ socat TCP-LISTEN:12345,reuseaddr,fork /dev/ttyACM0,raw,echo=0
 
 TROUBLESHOOTING:
+
+Gateworks Wiki: https://trac.gateworks.com
+
 If you're getting 0,0,-17 as a coordinate, make sure that your antenna is connected well.
 Ensure python is updated, the script used Python 3.10.12.
 
