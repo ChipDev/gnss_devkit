@@ -83,10 +83,11 @@ Once configured, the internet can be accessed normally and all scripts should fu
 
 ----------------------------------------------------------------------------------------------------
 
-USAGE: Download dependencies by running ```./setup.sh```. This creates the virtual environment.
-Configure settings.toml and .secrets.toml. 
-Activate the virtual environment which has the dependencies via ```source activate_venv.sh```.
-Run ```./start_gps.py```, which by default uses '```cgps```' to monitor data from the u-blox module.
+USAGE: 
+1. Download dependencies by running ```./setup.sh```. This creates the virtual environment.
+2. Configure settings.toml and .secrets.toml. 
+3. Activate the virtual environment which has the dependencies via ```source activate_venv.sh```.
+4. Run ```./start_gps.py```, which by default uses '```cgps```' to monitor data from the u-blox module.
 
 !!!                NOTE: setup.sh MASKS gpsd with the command "systemctl mask gpsd".                     !!!
 This is because the scripts provided use custom instances of gpsd + cgps, and pygnssutils uses /dev/ttyACM0.
