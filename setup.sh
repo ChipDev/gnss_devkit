@@ -8,49 +8,46 @@ check_success() {
     fi
 }
 
-# Update package lists
+# Install required system deps
 sudo apt update
 check_success "apt update"
 
-# Install gpsd
-sudo apt install -y gpsd
-check_success "gpsd installation"
+sudo apt install -y gpsd python3 python3-pip python-is-python3 socat python3-venv
+check_success "System dependencies installation"
 
-# Check gpsd version
+# Check versions
 gpsd --version
 check_success "gpsd version check"
-
-# Install Python3
-sudo apt install -y python3
-check_success "Python3 installation"
-
-# Check Python3 version
 python3 --version
 check_success "Python3 version check"
-
-# Install pip3
-sudo apt install -y python3-pip
-check_success "pip3 installation"
-
-# Check pip3 version
 pip3 --version
 check_success "pip3 version check"
 
-# Install python is python3
-sudo apt install -y python-is-python3
-check_success "python-is-python3 installation"
-
-# Install socat
-sudo apt install -y socat
-check_success "socat installation"
-
 echo "apt-get requirements satisfied"
 
-# Install Python requirements
-pip3 install -r requirements.txt --trusted-host files.pythonhosted.org --trusted-host pypi.org --trusted-host pypi.python.org
+# Create a virtual environment for pip to not throw errors
+python3 -m venv .venv
+check_success "Virtual environment creation"
+
+# Activate the virtual environment
+source .venv/bin/activate
+check_success "Virtual environment activation"
+
+# Install Python requirements in the virtual environment
+pip install -r requirements.txt
 check_success "Python requirements installation"
 
 echo "MASKING GPSD FOR DEVELOPMENT WITH COMMAND."
 sudo systemctl mask gpsd
 
-echo "Requirements satisfied. You should be good to go!"
+# Deactivate the virtual environment
+deactivate
+
+# Create an activation script
+cat << EOF > activate_venv.sh
+#!/bin/bash
+source .venv/bin/activate
+EOF
+chmod +x activate_venv.sh
+
+echo "Setup successful. Activate the virtual environment (before running start_gps.py) via: source activate_venv.sh"
