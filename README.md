@@ -83,10 +83,12 @@ Once configured, the internet can be accessed normally and all scripts should fu
 
 ----------------------------------------------------------------------------------------------------
 
-USAGE: Download dependencies by running ./setup.sh, configure settings.toml
-and .secrets.toml then run ./start_gps.py
+USAGE: Download dependencies by running ./setup.sh. C
+Configure settings.toml and .secrets.toml. 
+Activate the virtual environment which has the dependencies via source activate_venv.sh.
+Run ./start_gps.py, which by default uses 'cgps' to monitor data from the u-blox module.
 
-NOTE: setup.sh MASKS gpsd with the command "systemctl mask gpsd".                                    !!!
+!!!                NOTE: setup.sh MASKS gpsd with the command "systemctl mask gpsd".                     !!!
 This is because the scripts provided use custom instances of gpsd + cgps, and pygnssutils uses /dev/ttyACM0.
 To reduce conflict the system daemon is disabled. You should re-enable it for your own programs.
 
